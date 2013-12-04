@@ -1,0 +1,22 @@
+<!doctype html>
+<html data-ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>{{ output.title }}</title>
+</head>
+<body>
+	<input type="text" ng-model="output.title" placeholder="Título da página">
+
+	<br>
+
+	<input type="text" ng-model="output.whatever" placeholder="Qualquer outra coisa">
+
+	<br>
+
+	<input type="text" ng-model="output.whatever2" placeholder="Qualquer outra coisa 2">
+
+	<h1>{{ output }}</h1>
+
+	<script src="/bower_components/angular/angular.min.js"></script>
+</body>
+</html>
