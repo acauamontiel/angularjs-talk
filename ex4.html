@@ -14,17 +14,17 @@
 		{name:'Juliette', phone:'555-5678'}
 	]"></div>
 
-	<input type="text" ng-model="search.$" placeholder="Buscar em tudo">
+	<input type="text" ng-model="search.$" placeholder="Buscar">
 
 	<br>
 
-	<input type="text" ng-model="search.name" placeholder="Buscar pelo nome">
+	<!-- <input type="text" ng-model="search.name" placeholder="Buscar pelo nome">
 
 	<br>
 
 	<input type="text" ng-model="search.phone" placeholder="Buscar pelo número">
 
-	<br>
+	<br> -->
 
 	<table>
 		<thead>
@@ -34,7 +34,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="person in persons | filter:search:strict">
+			<tr ng-repeat="person in persons | filter:search">
+			<!-- <tr ng-repeat="person in persons | filter:search:strict"> -->
 				<td>{{ person.name }}</td>
 				<td>{{ person.phone }}</td>
 			</tr>
