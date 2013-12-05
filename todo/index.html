@@ -1,0 +1,96 @@
+<!doctype html>
+<html data-ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>To-Do List Tri Simples</title>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+<body data-ng-controller="todoCtrl">
+	<h1>To-Do List Tri Simples!</h1>
+
+	<input type="search" data-ng-model="search.text" placeholder="Buscar">
+
+
+	<p>{{ remaining() }} de {{ todos.length }} <button data-ng-click="clean()">Limpar</button></p>
+
+	<ul>
+		<li ng-animate="'animate'" data-ng-repeat="task in todos | filter:search:strict">
+		<!-- <li data-ng-repeat="task in todos | filter:search:strict | orderBy: 'text'"> -->
+		<!-- <li data-ng-animate="'animate'" data-ng-repeat="task in todos | filter:search:strict | orderBy: 'text'"> -->
+			<label>
+				<input type="checkbox" data-ng-model="task.done">
+				<span class="done done-{{ task.done }}">{{ task.text }}</span>
+			</label>
+		</li>
+	</ul>
+
+	<form data-ng-submit="addTask()">
+		<input type="text" data-ng-model="taskName" placeholder="Nova task">
+		<input type="submit" value="Adicionar">
+	</form>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+
+	<script>
+		function todoCtrl ($scope) {
+			$scope.todos = [
+				{
+					text:'Lorem ipsum dolor sit amet',
+					done: false
+				},
+				{
+					text:'Et, autem, fugiat, hic adipisci necessitatibus',
+					done: false
+				},
+				{
+					text:'Nesciunt, at, tenetur doloremque quos',
+					done: true
+				},
+				{
+					text:'Ducimus, est rem necessitatibus',
+					done: false
+				},
+				{
+					text:'Quae, eaque fuga voluptatibus esse obcaecati',
+					done: true
+				}
+			];
+
+			$scope.addTask = function () {
+				var taskName = $scope.taskName;
+
+				if (!taskName == undefined || !taskName == '') {
+					$scope.todos.push({
+						text: taskName,
+						done: false
+					});
+
+					$scope.taskName = '';
+				};
+
+			};
+
+			$scope.remaining = function() {
+				var count = 0;
+
+				angular.forEach($scope.todos, function(task) {
+					count += task.done ? 0 : 1;
+				});
+
+				return count;
+			};
+
+			$scope.clean = function () {
+				var todos = $scope.todos;
+
+				$scope.todos = [];
+
+				angular.forEach(todos, function(task) {
+					if (!task.done) $scope.todos.push(task);
+				});
+			};
+		}
+	</script>
+</body>
+</html>
