@@ -1,0 +1,49 @@
+<!doctype html>
+<html data-ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Exemplo 4</title>
+</head>
+<body>
+	<div ng-init="persons = [
+		{name:'John', phone:'555-1276'},
+		{name:'Mary', phone:'800-BIG-MARY'},
+		{name:'Mike', phone:'555-4321'},
+		{name:'Adam', phone:'555-5678'},
+		{name:'Julie', phone:'555-8765'},
+		{name:'Juliette', phone:'555-5678'}
+	]"></div>
+
+	<input type="text" ng-model="search.$" placeholder="Buscar">
+
+	<br>
+
+	<!-- <input type="text" ng-model="search.name" placeholder="Buscar pelo nome">
+
+	<br>
+
+	<input type="text" ng-model="search.phone" placeholder="Buscar pelo número">
+
+	<br> -->
+
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Telefone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="person in persons | filter:search">
+			<!-- <tr ng-repeat="person in persons | filter:search:strict"> -->
+				<td>{{ person.name }}</td>
+				<td>{{ person.phone }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- <h1>{{ persons }}</h1> -->
+
+	<script src="../bower_components/angular/angular.min.js"></script>
+</body>
+</html>
