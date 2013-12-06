@@ -10,15 +10,15 @@ Installing
 ```bash
 
 	$ git clone https://github.com/acauamontiel/angularjs-talk.git
-	npm install
-	bower install
+	$ npm install
+	$ bower install
 ```
 
 Run
 ---
 
 ```bash
-$ http-server
+	$ http-server
 ```
 
 Starts a static server in ***http://localhost:8080***
