@@ -11,6 +11,7 @@ Installing
 
 	$ git clone https://github.com/acauamontiel/angularjs-talk.git
 	npm install
+	bower install
 ```
 
 Run
