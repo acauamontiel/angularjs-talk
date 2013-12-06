@@ -17,3 +17,5 @@ Run
 ```bash
 $ http-server
 ```
+
+Starts a static server in ***http://localhost:8080***
