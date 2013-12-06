@@ -8,7 +8,9 @@ Installing
 ----------
 
 ```bash
-$ git clone https://github.com/acauamontiel/angularjs-talk.git
+
+	$ git clone https://github.com/acauamontiel/angularjs-talk.git
+	npm install
 ```
 
 Run
