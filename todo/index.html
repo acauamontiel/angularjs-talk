@@ -15,7 +15,7 @@
 	<p>{{ remaining() }} de {{ todos.length }} <button data-ng-click="clean()">Limpar</button></p>
 
 	<ul>
-		<li ng-animate="'animate'" data-ng-repeat="task in todos | filter:search:strict">
+		<li data-ng-repeat="task in todos | filter:search:strict">
 		<!-- <li data-ng-repeat="task in todos | filter:search:strict | orderBy: 'text'"> -->
 		<!-- <li data-ng-animate="'animate'" data-ng-repeat="task in todos | filter:search:strict | orderBy: 'text'"> -->
 			<label>
